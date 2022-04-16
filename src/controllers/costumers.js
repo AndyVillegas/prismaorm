@@ -18,7 +18,7 @@ const createCostumer = async (req, res) => {
 }
 
 const updateCostumer = async (req, res) => {
-    const { id } = req.params
+    const id = parseInt(req.params.id)
     const { first_name, last_name, age } = req.body
     const updatedCostumer = await prisma.costumers.update({
         where: { id },
@@ -34,7 +34,7 @@ const updateCostumer = async (req, res) => {
 }
 
 const deleteCostumer = async (req, res) => {
-    const { id } = req.params
+    const id = parseInt(req.params.id)
     await prisma.costumers.delete({
         where: { id }
     })
@@ -47,7 +47,7 @@ const findAllCostumers = async (req, res) => {
 }
 
 const findOneCostumer = async (req, res) => {
-    const { id } = req.params
+    const id = parseInt(req.params.id)
     const costumer = await prisma.costumers.findUnique({
         where: {
             id
