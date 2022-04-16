@@ -10,4 +10,4 @@
 docker-compose up --build
 ```
 
-By default the api runs on port **4000**
+By default the api runs on port **3000**
